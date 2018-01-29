@@ -15,25 +15,46 @@ class AppsCell: UICollectionViewCell {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
+    var app: App? {
+        didSet {
+            if let name = app?.name {
+                nameLabel.text = name
+            }
+            if let image = app?.imageName {
+                imageView.image = UIImage(named: image)
+            }
+            if let category = app?.category {
+                categoryLabel.text = category
+            }
+            if let price = app?.price {
+                priceLabel.text = "$\(price)"
+            }else {
+                priceLabel.text = ""
+            }
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        imageView.image = #imageLiteral(resourceName: "frozen")
+        imageView.image = nil
+        nameLabel.text = nil
+        categoryLabel.text = nil
+        priceLabel.text = nil
+        
         imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 16
         imageView.layer.masksToBounds = true
-        nameLabel.text = "Disney Build It : Frozen"
         nameLabel.numberOfLines = 2
-        
-        categoryLabel.text = "Entertainment"
         categoryLabel.textColor = .darkGray
-        
-        priceLabel.text = "$3.99"
         priceLabel.textColor = .darkGray
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         
+        imageView.image = nil
+        nameLabel.text = nil
+        categoryLabel.text = nil
+        priceLabel.text = nil
     }
 }
