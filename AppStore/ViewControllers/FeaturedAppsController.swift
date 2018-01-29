@@ -9,16 +9,20 @@
 import UIKit
 
 class FeaturedAppsController: UIViewController {
-
     
     @IBOutlet weak var collectionView: UICollectionView!
+    var appCategories: [AppCategory]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
         
         title = "AppStore"
-        
+        AppCategory.fetchFeaturedApps { (appCategories) in
+            self.appCategories = appCategories
+            self.collectionView.reloadData()
+        }
         
         collectionView.register(UINib(nibName: CategoryCell.resusableIdentifier, bundle:nil), forCellWithReuseIdentifier: CategoryCell.resusableIdentifier)
     }
@@ -26,11 +30,19 @@ class FeaturedAppsController: UIViewController {
 
 extension FeaturedAppsController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3;
+        if let count = appCategories?.count {
+            return count
+        }
+        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.resusableIdentifier, for: indexPath) as! CategoryCell
+        if let appCategories = self.appCategories{
+            cell.appCategory = appCategories[indexPath.row]
+            return cell
+        }
         
         return cell
     }
