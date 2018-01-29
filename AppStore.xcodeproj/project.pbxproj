@@ -15,6 +15,8 @@
 		3ED77607201EBB0D0014CD3D /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED77605201EBB0D0014CD3D /* CategoryCell.swift */; };
 		3ED77608201EBB0D0014CD3D /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ED77606201EBB0D0014CD3D /* CategoryCell.xib */; };
 		3ED7760B201EBB260014CD3D /* NSObject + resusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED7760A201EBB260014CD3D /* NSObject + resusableIdentifier.swift */; };
+		3ED7760E201EC1590014CD3D /* AppsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED7760C201EC1590014CD3D /* AppsCell.swift */; };
+		3ED7760F201EC1590014CD3D /* AppsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ED7760D201EC1590014CD3D /* AppsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		3ED77605201EBB0D0014CD3D /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		3ED77606201EBB0D0014CD3D /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		3ED7760A201EBB260014CD3D /* NSObject + resusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject + resusableIdentifier.swift"; sourceTree = "<group>"; };
+		3ED7760C201EC1590014CD3D /* AppsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsCell.swift; sourceTree = "<group>"; };
+		3ED7760D201EC1590014CD3D /* AppsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 			children = (
 				3ED77605201EBB0D0014CD3D /* CategoryCell.swift */,
 				3ED77606201EBB0D0014CD3D /* CategoryCell.xib */,
+				3ED7760C201EC1590014CD3D /* AppsCell.swift */,
+				3ED7760D201EC1590014CD3D /* AppsCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -156,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ED7760F201EC1590014CD3D /* AppsCell.xib in Resources */,
 				3ED775F4201EB75E0014CD3D /* LaunchScreen.storyboard in Resources */,
 				3ED77603201EB8E80014CD3D /* FeaturedAppsController.xib in Resources */,
 				3ED775F1201EB75E0014CD3D /* Assets.xcassets in Resources */,
@@ -173,6 +180,7 @@
 				3ED775EA201EB75E0014CD3D /* AppDelegate.swift in Sources */,
 				3ED77602201EB8E80014CD3D /* FeaturedAppsController.swift in Sources */,
 				3ED77607201EBB0D0014CD3D /* CategoryCell.swift in Sources */,
+				3ED7760E201EC1590014CD3D /* AppsCell.swift in Sources */,
 				3ED7760B201EBB260014CD3D /* NSObject + resusableIdentifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
