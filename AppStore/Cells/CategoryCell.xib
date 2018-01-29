@@ -13,14 +13,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoryCell" customModule="AppStore" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="750" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="750" height="230"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="750" height="150"/>
+                <rect key="frame" x="0.0" y="0.0" width="750" height="230"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="239-eQ-1oW">
-                        <rect key="frame" x="8" y="0.0" width="734" height="150"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qC-cD-uOA">
+                        <rect key="frame" x="14" y="0.0" width="44" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="239-eQ-1oW">
+                        <rect key="frame" x="0.0" y="30" width="750" height="200"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MGs-1N-18b">
                             <size key="itemSize" width="50" height="50"/>
@@ -29,17 +35,31 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQH-27-5MK">
+                        <rect key="frame" x="14" y="229.5" width="736" height="0.5"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="e9w-YG-bMA"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="239-eQ-1oW" secondAttribute="trailing" constant="8" id="3nc-6x-VQA"/>
+                <constraint firstAttribute="trailing" secondItem="239-eQ-1oW" secondAttribute="trailing" id="3nc-6x-VQA"/>
                 <constraint firstAttribute="bottom" secondItem="239-eQ-1oW" secondAttribute="bottom" id="Jma-V5-fHI"/>
-                <constraint firstItem="239-eQ-1oW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="RTF-W0-tCi"/>
-                <constraint firstItem="239-eQ-1oW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="aYc-5p-6uY"/>
+                <constraint firstItem="239-eQ-1oW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="30" id="RTF-W0-tCi"/>
+                <constraint firstAttribute="bottom" secondItem="wQH-27-5MK" secondAttribute="bottom" id="SZa-1W-QMk"/>
+                <constraint firstItem="9qC-cD-uOA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="14" id="UqO-UA-amf"/>
+                <constraint firstAttribute="trailing" secondItem="wQH-27-5MK" secondAttribute="trailing" id="VRC-c8-QGZ"/>
+                <constraint firstItem="9qC-cD-uOA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VjB-AL-Swm"/>
+                <constraint firstItem="239-eQ-1oW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aYc-5p-6uY"/>
+                <constraint firstItem="239-eQ-1oW" firstAttribute="top" secondItem="9qC-cD-uOA" secondAttribute="bottom" id="pfQ-yS-R9H"/>
+                <constraint firstItem="wQH-27-5MK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="14" id="w4N-Za-5ZH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="appsCollectionView" destination="239-eQ-1oW" id="RY4-of-WcS"/>
+                <outlet property="titleLabel" destination="9qC-cD-uOA" id="rtq-rX-As7"/>
             </connections>
             <point key="canvasLocation" x="-349" y="-111"/>
         </collectionViewCell>
