@@ -13,9 +13,16 @@ class CategoryCell: UICollectionViewCell {
     @IBOutlet weak var appsCollectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    var appCategory: AppCategory? {
+        didSet {
+            if let titleName = appCategory?.name {
+                self.titleLabel.text = titleName
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        titleLabel.text = "Best New Apps"
         appsCollectionView.delegate = self
         appsCollectionView.dataSource = self
         
@@ -32,11 +39,16 @@ class CategoryCell: UICollectionViewCell {
 
 extension CategoryCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5;
+        if let appCategories = self.appCategory, let apps = appCategories.apps{
+            return apps.count
+        }
+        
+        return 0;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsCell.resusableIdentifier, for: indexPath) as! AppsCell
+        cell.app = appCategory?.apps?[indexPath.row]
         
         return cell
     }
