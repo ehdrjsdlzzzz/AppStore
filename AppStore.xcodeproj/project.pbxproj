@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D28385D2368D58F50D68962 /* Pods_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3515271CAE413453CA61F427 /* Pods_AppStore.framework */; };
+		3E2A2CCA202707E300FADB99 /* LargeAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A2CC8202707E300FADB99 /* LargeAppCell.swift */; };
+		3E2A2CCB202707E300FADB99 /* LargeAppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E2A2CC9202707E300FADB99 /* LargeAppCell.xib */; };
 		3ED775EA201EB75E0014CD3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED775E9201EB75E0014CD3D /* AppDelegate.swift */; };
 		3ED775F1201EB75E0014CD3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ED775F0201EB75E0014CD3D /* Assets.xcassets */; };
 		3ED775F4201EB75E0014CD3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ED775F2201EB75E0014CD3D /* LaunchScreen.storyboard */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		3515271CAE413453CA61F427 /* Pods_AppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E2A2CC8202707E300FADB99 /* LargeAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeAppCell.swift; sourceTree = "<group>"; };
+		3E2A2CC9202707E300FADB99 /* LargeAppCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargeAppCell.xib; sourceTree = "<group>"; };
 		3ED775E6201EB75E0014CD3D /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ED775E9201EB75E0014CD3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ED775F0201EB75E0014CD3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 			children = (
 				3ED77605201EBB0D0014CD3D /* CategoryCell.swift */,
 				3ED77606201EBB0D0014CD3D /* CategoryCell.xib */,
+				3E2A2CC8202707E300FADB99 /* LargeAppCell.swift */,
+				3E2A2CC9202707E300FADB99 /* LargeAppCell.xib */,
 				3ED7760C201EC1590014CD3D /* AppsCell.swift */,
 				3ED7760D201EC1590014CD3D /* AppsCell.xib */,
 			);
@@ -219,6 +225,7 @@
 				3ED77603201EB8E80014CD3D /* FeaturedAppsController.xib in Resources */,
 				3ED775F1201EB75E0014CD3D /* Assets.xcassets in Resources */,
 				3ED77608201EBB0D0014CD3D /* CategoryCell.xib in Resources */,
+				3E2A2CCB202707E300FADB99 /* LargeAppCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ED775EA201EB75E0014CD3D /* AppDelegate.swift in Sources */,
+				3E2A2CCA202707E300FADB99 /* LargeAppCell.swift in Sources */,
 				3EE58357201F538C00859DC0 /* Resource.swift in Sources */,
 				3ED77602201EB8E80014CD3D /* FeaturedAppsController.swift in Sources */,
 				3ED77607201EBB0D0014CD3D /* CategoryCell.swift in Sources */,

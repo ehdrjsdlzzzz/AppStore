@@ -40,7 +40,7 @@ extension FeaturedAppsController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.resusableIdentifier, for: indexPath) as! CategoryCell
         if let appCategories = self.appCategories{
-            cell.appCategory = appCategories[indexPath.row]
+            cell.appCategory = appCategories[indexPath.item]
             return cell
         }
         
@@ -54,6 +54,9 @@ extension FeaturedAppsController: UICollectionViewDelegate {
 
 extension FeaturedAppsController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.item == 2  {
+            return CGSize(width: view.frame.width, height: 160)
+        }
         return CGSize(width: view.frame.width, height: 230)
     }
 }
