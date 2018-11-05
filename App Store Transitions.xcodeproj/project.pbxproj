@@ -16,6 +16,8 @@
 		3ECAC19D218F342400F46B7E /* reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECAC19C218F342400F46B7E /* reuseIdentifier.swift */; };
 		3ECAC1A0218F355000F46B7E /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECAC19F218F355000F46B7E /* CardDetailViewController.swift */; };
 		3ECAC1A3218F368500F46B7E /* EnlargePresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECAC1A2218F368400F46B7E /* EnlargePresentAnimationController.swift */; };
+		3ECAC1A621902B7600F46B7E /* CardAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECAC1A521902B7600F46B7E /* CardAnimationView.swift */; };
+		3ECAC1A821902B8E00F46B7E /* CardAnimationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECAC1A721902B8E00F46B7E /* CardAnimationView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		3ECAC19C218F342400F46B7E /* reuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reuseIdentifier.swift; sourceTree = "<group>"; };
 		3ECAC19F218F355000F46B7E /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 		3ECAC1A2218F368400F46B7E /* EnlargePresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnlargePresentAnimationController.swift; sourceTree = "<group>"; };
+		3ECAC1A521902B7600F46B7E /* CardAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAnimationView.swift; sourceTree = "<group>"; };
+		3ECAC1A721902B8E00F46B7E /* CardAnimationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardAnimationView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		3ECAC185218F310A00F46B7E /* App Store Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				3ECAC1A421902B6700F46B7E /* Views */,
 				3ECAC1A1218F366700F46B7E /* Animation Controllers */,
 				3ECAC19E218F353000F46B7E /* ViewControllers */,
 				3ECAC19B218F341700F46B7E /* Extensions */,
@@ -106,6 +111,15 @@
 				3ECAC1A2218F368400F46B7E /* EnlargePresentAnimationController.swift */,
 			);
 			path = "Animation Controllers";
+			sourceTree = "<group>";
+		};
+		3ECAC1A421902B6700F46B7E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3ECAC1A521902B7600F46B7E /* CardAnimationView.swift */,
+				3ECAC1A721902B8E00F46B7E /* CardAnimationView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +183,7 @@
 				3ECAC191218F310B00F46B7E /* LaunchScreen.storyboard in Resources */,
 				3ECAC18E218F310B00F46B7E /* Assets.xcassets in Resources */,
 				3ECAC18C218F310A00F46B7E /* Main.storyboard in Resources */,
+				3ECAC1A821902B8E00F46B7E /* CardAnimationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ECAC1A621902B7600F46B7E /* CardAnimationView.swift in Sources */,
 				3ECAC1A0218F355000F46B7E /* CardDetailViewController.swift in Sources */,
 				3ECAC1A3218F368500F46B7E /* EnlargePresentAnimationController.swift in Sources */,
 				3ECAC189218F310A00F46B7E /* ViewController.swift in Sources */,
