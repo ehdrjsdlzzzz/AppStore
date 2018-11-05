@@ -40,7 +40,6 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as! CardCell
         cell.setup(title: titles[indexPath.item], description: descriptions[indexPath.item])
-        
         return cell
     }
     
@@ -50,7 +49,7 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? CardCell else { return }
-        cardViewFrame = cell.superview?.convert(cell.frame, to: nil)
+        cardViewFrame = cell.superview?.convert(cell.frame, to: self.view)
         selected = indexPath
         cell.performSegue = {
             self.performSegue(withIdentifier: "ShowCardDetail", sender: indexPath)

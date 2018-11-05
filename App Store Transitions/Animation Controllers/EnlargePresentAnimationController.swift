@@ -24,6 +24,8 @@ class EnlargePresentAnimationController: NSObject, UIViewControllerAnimatedTrans
         guard let toVC = transitionContext.viewController(forKey: .to) else { return }
         guard let snapShot = toVC.view.snapshotView(afterScreenUpdates: true) else { return }
         
+        let animatingContainerView = CardAnimationView.initFromNib()
+        
         let containerView = transitionContext.containerView
         let finalFrame = transitionContext.finalFrame(for: toVC)
         
@@ -31,19 +33,35 @@ class EnlargePresentAnimationController: NSObject, UIViewControllerAnimatedTrans
         snapShot.layer.cornerRadius = 20
         snapShot.layer.masksToBounds = true
         
-        containerView.addSubview(toVC.view)
+        animatingContainerView.frame = originFrame
+        animatingContainerView.layer.cornerRadius = 20
+        animatingContainerView.layer.masksToBounds = true
+        
         containerView.addSubview(snapShot)
+        containerView.addSubview(animatingContainerView)
+        containerView.addSubview(toVC.view)
         
         toVC.view.isHidden = true
-
-        UIView.animate(withDuration: 1.2, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
+//        animatingContainerView.isHidden = true
+//        snapShot.isHidden = true
+        
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: .calculationModeCubic, animations: {
             fromVC.blurEffectView.alpha = 1
-            snapShot.frame = finalFrame
-            snapShot.layer.cornerRadius = 0
-        }) { (_) in
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/2, animations: {
+                let frame = CGRect(x: 0, y: 0, width: fromVC.view.frame.width, height: fromVC.view.frame.width)
+                animatingContainerView.frame = frame
+                animatingContainerView.layer.cornerRadius = 0
+            })
             
-            toVC.view.isHidden = false
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/2, animations: {
+                snapShot.frame = finalFrame
+                snapShot.layer.cornerRadius = 0
+            })
+            
+        }) { (_) in
             snapShot.removeFromSuperview()
+            animatingContainerView.removeFromSuperview()
+            toVC.view.isHidden = false
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
     }
